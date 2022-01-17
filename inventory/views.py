@@ -18,12 +18,12 @@ from .models import Inventory
 
 
 # Create your views here.
-class InventoryListView(LoginRequiredMixin, ListView):
+class InventoryListView(ListView):
     model = Inventory
     template_name = 'inventory_list.html'
 
 
-class InventoryDetailView(LoginRequiredMixin, DetailView):
+class InventoryDetailView(DetailView):
     model = Inventory
     template_name = 'inventory_detail.html'
 
