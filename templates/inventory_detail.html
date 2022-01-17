@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="inventory-entry">
+        <h2>{{ object.title }}</h2>
+        <p>by {{ object.merchant }} | {{ object.date }}</p>
+        <p>{{ object.specifications }}</p>
+        <p>{{ object.description }}</p>
+    </div>
+
+    <p><a href="{% url 'inventory_edit' inventory.pk %}">Edit</a>   |   <a href="{% url 'inventory_delete' inventory.pk %}">Delete</a></p>
+    <p>Back to <a href="{% url 'inventory_list' %}">All Inventories</a>.</p>
+{% endblock content %}

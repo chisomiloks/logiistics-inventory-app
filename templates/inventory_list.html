@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Inventories{% endblock title %}
+
+{% block content %}
+    {% for inventory in object_list %}
+        <div class="card">
+            <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'inventory_detail' inventory.pk %}">{{ inventory.title }}</a></span>
+                <span class="text-muted">by {{ inventory.merchant }} | {{ inventory.date }}</span>
+            </div>
+            <div class="card-body">
+                <h5>Description</h5>
+                <p>{{ inventory.description }}</p>
+                <h5>Manufacturer</h5>
+                <p>{{ inventory.manufacturer }}</p>
+                <h5>Quantity</h5>
+                <p>{{ inventory.quantity }}</p>
+                <h5>Specifications</h5>
+                <p>{{ inventory.specifications }}</p>
+                <a href="{% url 'inventory_edit' inventory.pk %}">Edit</a> |
+                <a href="{% url 'inventory_delete' inventory.pk %}">Delete</a>
+            </div>
+            {% if tag in inventory.tags.all %}
+                <div class="card-footer">
+                    <span class="text-muted">Tags: {{ inventory.tags.all }}</span>
+                </div>
+            {% else %}
+                <div class="card-footer">
+                    <span class="text-muted">No Tags.</span>
+                </div>
+            {% endif %}
+            <!-- <div class="card-footer">
+                {% for comment in inventory.comments.all %}
+                    <p>
+                        <span class="font-weight-bold">
+                            {{ comment.author }} &middot;
+                        </span>
+                        {{ comment }}
+                    </p>
+                {% endfor %}
+            </div> -->
+        </div>
+        <br />
+    {% endfor %}
+{% endblock content %}
