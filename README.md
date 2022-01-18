@@ -100,4 +100,4 @@ Password - admin@123
 
 ```
 
-Extra feature related to exporting product data to a csv can be found under Inventorys
+Extra feature related to exporting product data to a csv can be found under Inventorys on the admin page.
