@@ -2,6 +2,12 @@
 
 *Inventory tracking web application for a logistics company.*
 
+To get source code, download zip folder and extract on your local machine or clone repository using the following command
+
+```
+git clone https://github.com/chisomiloks/logistics-inventory-app.git
+```
+
 In order to run the application you need to have the following installed.
 
 - Python 3
@@ -72,6 +78,13 @@ Run Application
 ---
 
 In application main directory (The directory with the ***manage.py*** file), run
+
+```
+python manage.py createsuperuser
+```
+
+to setup Admin account (Enter username, email and password with the prompts)
+
 ```
 python manage.py runserver
 ```
@@ -88,16 +101,14 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+and then rerun
+
+```
+python manage.py runserver
+```
+
 Visit http://127.0.0.1:8000/ to visit application homepage
 
-For administrative page visit http://127.0.0.1:8000/admin and login with the following information
-
-```
-Admin Account
-
-Username - admin
-Password - admin@123
-
-```
+For administrative page visit http://127.0.0.1:8000/admin and login with the admin credential information as setup above
 
 Extra feature related to exporting product data to a csv can be found under Inventorys on the admin page.
