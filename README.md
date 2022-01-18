@@ -1,6 +1,6 @@
 ## Shopify Backend Developer Intern Challenge (Summer 2022) Project
 
-Inventory tracking web application for a logitics company.
+*Inventory tracking web application for a logistics company.*
 
 In order to run the application you need to have the following installed.
 
