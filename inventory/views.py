@@ -21,6 +21,7 @@ from .models import Inventory
 class InventoryListView(ListView):
     model = Inventory
     template_name = 'inventory_list.html'
+    context_object_name = 'latest_inventory_list'
 
 
 class InventoryDetailView(DetailView):
@@ -35,7 +36,7 @@ class InventoryDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
     def test_func(self):
         obj = self.get_object()
-        return obj.merchant == self.request.user
+        return obj.merchant == self.request.user or self.request.user.is_superuser
 
 
 class InventoryUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
@@ -45,7 +46,7 @@ class InventoryUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
 
     def test_func(self):
         obj = self.get_object()
-        return obj.merchant == self.request.user
+        return obj.merchant == self.request.user or self.request.user.is_superuser
 
 
 class InventoryCreateView(LoginRequiredMixin, CreateView):
