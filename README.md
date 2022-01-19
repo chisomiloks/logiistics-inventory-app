@@ -43,7 +43,7 @@ pipenv shell
 
 in the main directory where the files of the application are stored to activate the virtual environment. 
 
-You can now install Django and the other packages in the activated environment using th commands below. (N/B - to exit the evironment you only need to enter the command ***exit*** and to start it up again, you rerun ***pipenv shell*** in the directory)
+You can now install Django and the other packages in the activated environment using the commands below. (N/B - to exit the evironment you only need to enter the command ***exit*** and to start it up again, you rerun ***pipenv shell*** in the directory)
 
 2. Django
 ```
