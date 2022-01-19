@@ -10,7 +10,6 @@ class InventoryAdmin(ImportExportModelAdmin):
         ('Merchant',            {'fields': ['merchant']}),
         ('Description',         {'fields': ['description']}),
         ('Specifications',      {'fields': ['specifications']}),
-        ('Date Info',           {'fields': ['date']}),
         ('Manufacturer',        {'fields': ['manufacturer']}),
         ('Quantity',            {'fields': ['quantity']}),
     ]
