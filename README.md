@@ -77,22 +77,7 @@ Run Application
 
 ---
 
-In application main directory (The directory with the ***manage.py*** file), run
-
-```
-python manage.py createsuperuser
-```
-
-to setup Admin account (Enter username, email and password with the prompts)
-
-```
-python manage.py runserver
-```
-
-to start the application server.
-
-
-If getting warning about migrations, run
+In application main directory (The directory with the ***manage.py*** file), run the following commands
 
 ```
 python manage.py makemigrations
@@ -100,12 +85,31 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
+to ensure that database scheme reflects the current state of the models.
 
-and then rerun
+Run
+
+```
+python manage.py createsuperuser
+```
+
+to setup Admin account (Enter username, email and password with the prompts).
+
+Then run the following command to load initial dummy data
+
+```
+python manage.py loaddata fixtures/initial_inventory_data.json
+```
+
+
+Then run
 
 ```
 python manage.py runserver
 ```
+
+to start the application server.
+
 
 Visit http://127.0.0.1:8000/ to visit application homepage
 
