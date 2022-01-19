@@ -43,6 +43,7 @@ class InventoryUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = Inventory
     template_name = 'inventory_edit.html'
     fields = ('title', 'description', 'specifications', 'manufacturer', 'quantity')
+    context_object_name = 'updated_inventory_list'
 
     def test_func(self):
         obj = self.get_object()
