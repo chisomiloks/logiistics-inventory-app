@@ -115,4 +115,16 @@ Visit http://127.0.0.1:8000/ to visit application homepage
 
 For administrative page visit http://127.0.0.1:8000/admin and login with the admin credential information as setup above
 
+---
+
+Additional Info
+
+---
+
 Extra feature related to exporting product data to a csv can be found under Inventorys on the admin page.
+
+To run tests, run
+
+```
+python manage.py test
+```
